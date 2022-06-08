@@ -40,6 +40,10 @@ return require('packer').startup(function(use)
 		run = ':TSUpdate',
 		config = get_setup("treesitter")
 	})
+	use({
+		'windwp/nvim-autopairs',
+		config = get_setup("autopairs")
+	})
 
 	-- lsp plugins
 	use({
