@@ -47,7 +47,7 @@ return require('packer').startup(function(use)
 		{
 			'neovim/nvim-lspconfig',
 			config = function() -- make sure installer is run before config
-				require("nvim-lsp-installer").setup({})
+				require("setup/lsp-installer")
 				require("setup/lspconfig")
 			end
 		}
