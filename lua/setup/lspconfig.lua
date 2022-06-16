@@ -1,4 +1,4 @@
-local servers = { "clangd", "jsonls", "pyright", "sumneko_lua" }
+local servers = require('setup/lsp-installer').get_servers()
 
 for _, lsp in pairs(servers) do
 	require('lspconfig')[lsp].setup {

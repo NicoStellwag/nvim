@@ -1,3 +1,7 @@
+M = {}
+
+local lspinstaller = require("nvim-lsp-installer")
+
 local settings = {
     -- A list of servers to automatically install if they're not already installed. Example: { "rust_analyzer", "sumneko_lua" }
     -- This setting has no relation with the `automatic_installation` setting.
@@ -70,5 +74,15 @@ local settings = {
         download_url_template = "https://github.com/%s/releases/download/%s/%s",
     },
 }
+lspinstaller.setup(settings)
 
-require("nvim-lsp-installer").setup(settings)
+M.get_servers = function()
+	local servers = lspinstaller.get_installed_servers()
+	local servernames = {}
+	for i, server in ipairs(servers) do
+		servernames[i] = server.name
+	end
+	return servernames
+end
+
+return M
