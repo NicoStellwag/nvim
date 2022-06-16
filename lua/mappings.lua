@@ -13,6 +13,12 @@ vim.api.nvim_set_keymap("n", "<CR>", ":noh<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<M-l>", "<cmd>Telescope find_files<CR>", {})
 vim.api.nvim_set_keymap("n", "<M-;>", "<cmd>Telescope live_grep<CR>", {})
 
+-- treesitter units
+vim.api.nvim_set_keymap('x', 'iu', ':lua require"treesitter-unit".select()<CR>', {noremap=true})
+vim.api.nvim_set_keymap('x', 'au', ':lua require"treesitter-unit".select(true)<CR>', {noremap=true})
+vim.api.nvim_set_keymap('o', 'iu', ':<c-u>lua require"treesitter-unit".select()<CR>', {noremap=true})
+vim.api.nvim_set_keymap('o', 'au', ':<c-u>lua require"treesitter-unit".select(true)<CR>', {noremap=true})
+
 -- lspconfig
 local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)

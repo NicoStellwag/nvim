@@ -44,6 +44,9 @@ return require('packer').startup(function(use)
 		'windwp/nvim-autopairs',
 		config = get_setup("autopairs")
 	})
+	use({
+		'David-Kunz/treesitter-unit'
+	})
 
 	-- lsp plugins
 	use({
