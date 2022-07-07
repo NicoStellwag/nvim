@@ -22,9 +22,15 @@ return require('packer').startup(function(use)
 		'lervag/vimtex',
 		config = get_setup("vimtex")
 	})
+	use({
+		'voldikss/vim-floaterm',
+		config = get_setup("floaterm")
+	})
 
 	-- neovim / lua plugins
-	use('b3nj5m1n/kommentary')
+	use({
+		'b3nj5m1n/kommentary'
+	})
 	use({
 		'nvim-lualine/lualine.nvim',
 		requires = { 'kyazdani42/nvim-web-devicons', opt = true },

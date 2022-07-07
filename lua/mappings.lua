@@ -1,5 +1,7 @@
 local M = {}
 
+local opts = { noremap = true, silent = true }
+
 -- Alt j is escape
 vim.api.nvim_set_keymap("i", "<M-j>", "<Esc>", {})
 vim.api.nvim_set_keymap("v", "<M-j>", "<Esc>", {})
@@ -20,7 +22,6 @@ vim.api.nvim_set_keymap('o', 'iu', ':<c-u>lua require"treesitter-unit".select()<
 vim.api.nvim_set_keymap('o', 'au', ':<c-u>lua require"treesitter-unit".select(true)<CR>', {noremap=true})
 
 -- lspconfig
-local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
@@ -56,9 +57,10 @@ vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua require"lspsaga.rename".rename()<CR
 vim.api.nvim_set_keymap('n', 'go', '<cmd>Lspsaga show_line_diagnostics<CR>', opts)
 vim.api.nvim_set_keymap('n', 'gh', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
 vim.api.nvim_set_keymap('n', 'gl', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts)
-vim.api.nvim_set_keymap('n', '<M-k>', '<cmd>lua require"lspsaga.floaterm".open_float_terminal()<CR>', opts)
-vim.api.nvim_set_keymap('t', '<M-j>', '<cmd>lua require"lspsaga.floaterm".close_float_terminal()<CR>', opts)
 
+-- floaterm
+vim.api.nvim_set_keymap('n', '<M-k>', '<cmd>FloatermNew<CR>', opts)
+vim.api.nvim_set_keymap('t', '<M-j>', '<cmd>FloatermKill!<CR>', opts)
 
 M.lspconfig_onattach_mappings = lspconfig_onattach_mappings
 return M
