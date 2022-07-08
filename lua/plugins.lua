@@ -22,9 +22,9 @@ return require('packer').startup(function(use)
 		'lervag/vimtex',
 		config = get_setup("vimtex")
 	})
-	use({
-		'voldikss/vim-floaterm',
-		config = get_setup("floaterm")
+	use({"akinsho/toggleterm.nvim",
+	tag = 'v1.*',
+	config = get_setup("toggleterm")
 	})
 
 	-- neovim / lua plugins

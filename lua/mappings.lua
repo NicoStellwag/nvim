@@ -58,9 +58,10 @@ vim.api.nvim_set_keymap('n', 'go', '<cmd>Lspsaga show_line_diagnostics<CR>', opt
 vim.api.nvim_set_keymap('n', 'gh', '<cmd>Lspsaga diagnostic_jump_prev<CR>', opts)
 vim.api.nvim_set_keymap('n', 'gl', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts)
 
--- floaterm
-vim.api.nvim_set_keymap('n', '<M-k>', '<cmd>FloatermNew<CR>', opts)
-vim.api.nvim_set_keymap('t', '<M-j>', '<cmd>FloatermKill!<CR>', opts)
+-- toggleterm
+vim.api.nvim_set_keymap('n', '<M-k>', '<cmd>ToggleTerm<CR>', opts)
+vim.api.nvim_set_keymap('t', '<M-j>', '<cmd>ToggleTermToggleAll!<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>nm', '<cmd>lua _NMAKE_TOGGLE()<CR>', opts)
 
 M.lspconfig_onattach_mappings = lspconfig_onattach_mappings
 return M
