@@ -64,7 +64,8 @@ vim.api.nvim_set_keymap('n', 'gl', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts
 -- toggleterm
 vim.api.nvim_set_keymap('n', '<M-k>', '<cmd>ToggleTerm<CR>', opts)
 vim.api.nvim_set_keymap('t', '<M-j>', '<cmd>ToggleTermToggleAll!<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>nm', '<cmd>lua _NMAKE_TOGGLE()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>tnm', '<cmd>lua _NMAKE_TOGGLE()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>tvs', '<cmd>lua _VSDEVSHELL_TOGGLE()<CR>', opts)
 
 M.lspconfig_onattach_mappings = lspconfig_onattach_mappings
 return M
