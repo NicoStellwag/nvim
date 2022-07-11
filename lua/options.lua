@@ -33,3 +33,12 @@ opt.smartcase = true
 
 -- keep cursor in the middle of the screen
 opt.scrolloff = 5
+
+-- powershell default on windows
+local is_windows = vim.fn.has('win32') or vim.fn.has('win32unix')
+if is_windows and not vim.fn.has('wsl') then
+	vim.o.shell = 'powershell'
+	vim.o.shellcmdflag = '-c'
+	vim.o.shellquote = '"'
+	vim.o.shellxquote = '.'
+end
