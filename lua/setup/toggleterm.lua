@@ -55,7 +55,7 @@ end
 
 -- general config
 local options = {}
-if vim.fn.has('win32unix') then
+if vim.fn.has('win32unix') and not vim.fn.has('wsl') then
 	options.shell = 'powershell'
 end
 
