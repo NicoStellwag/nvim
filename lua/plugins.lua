@@ -3,6 +3,10 @@ local function get_setup(name)
 end
 
 return require('packer').startup(function(use)
+	-- packer itself
+	use({
+		'wbthomason/packer.nvim'
+	})
 	-- themes
 	use({
 		'joshdick/onedark.vim',
@@ -23,7 +27,7 @@ return require('packer').startup(function(use)
 		config = get_setup("vimtex")
 	})
 	use({"akinsho/toggleterm.nvim",
-	tag = 'v1.*',
+	tag = 'v2.*',
 	config = get_setup("toggleterm")
 	})
 
