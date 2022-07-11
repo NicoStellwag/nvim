@@ -7,6 +7,7 @@ return require('packer').startup(function(use)
 	use({
 		'wbthomason/packer.nvim'
 	})
+
 	-- themes
 	use({
 		'joshdick/onedark.vim',
@@ -25,10 +26,6 @@ return require('packer').startup(function(use)
 	use({
 		'lervag/vimtex',
 		config = get_setup("vimtex")
-	})
-	use({"akinsho/toggleterm.nvim",
-	tag = 'v2.*',
-	config = get_setup("toggleterm")
 	})
 
 	-- neovim / lua plugins
@@ -57,6 +54,15 @@ return require('packer').startup(function(use)
 	use({
 		'David-Kunz/treesitter-unit'
 	})
+	use({"akinsho/toggleterm.nvim",
+		tag = 'v2.*',
+		config = get_setup("toggleterm")
+	})
+	use({
+		'nmac427/guess-indent.nvim',
+		config = get_setup("guess-indent")
+	})
+
 
 	-- lsp plugins
 	use({
