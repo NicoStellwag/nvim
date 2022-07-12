@@ -63,6 +63,20 @@ return require('packer').startup(function(use)
 		config = get_setup("guess-indent")
 	})
 
+	-- dap plugins
+	use({
+		'mfussenegger/nvim-dap',
+		config = get_setup('dap')
+	})
+	use({
+		'rcarriga/nvim-dap-ui',
+		config = get_setup('dap-ui')
+	})
+	use({
+		'theHamsta/nvim-dap-virtual-text',
+		config = get_setup('dap-virtual-text')
+	})
+
 
 	-- lsp plugins
 	use({

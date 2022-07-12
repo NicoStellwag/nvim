@@ -1,3 +1,4 @@
+---@diagnostic disable: unused-local
 local M = {}
 
 local opts = { noremap = true, silent = true }
@@ -68,6 +69,14 @@ vim.api.nvim_set_keymap('n', '<leader>tvs', '<cmd>lua _VSDEVSHELL_TOGGLE()<CR>',
 vim.api.nvim_set_keymap('t', '<M-k>', '<cmd>lua _DEFAULT_TOGGLE()<CR>', opts)
 vim.api.nvim_set_keymap('t', '<leader>tnm', '<cmd>lua _NMAKE_TOGGLE()<CR>', opts)
 vim.api.nvim_set_keymap('t', '<leader>tvs', '<cmd>lua _VSDEVSHELL_TOGGLE()<CR>', opts)
+
+-- dap
+vim.api.nvim_set_keymap('n', '<F9>', '<cmd>lua require"dap".step_into()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<F10>', '<cmd>lua require"dap".step_over()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<F11>', '<cmd>lua require"dap".step_out()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<F12>', '<cmd>lua require"dap".continue()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>db', '<cmd>lua require"dap".toggle_breakpoint()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>dB', '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>', opts)
 
 M.lspconfig_onattach_mappings = lspconfig_onattach_mappings
 return M
