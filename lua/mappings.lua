@@ -64,10 +64,8 @@ vim.api.nvim_set_keymap('n', 'gl', '<cmd>Lspsaga diagnostic_jump_next<CR>', opts
 
 -- toggleterm
 vim.api.nvim_set_keymap('n', '<M-k>', '<cmd>lua _DEFAULT_TOGGLE()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>tnm', '<cmd>lua _NMAKE_TOGGLE()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>tvs', '<cmd>lua _VSDEVSHELL_TOGGLE()<CR>', opts)
 vim.api.nvim_set_keymap('t', '<M-k>', '<cmd>lua _DEFAULT_TOGGLE()<CR>', opts)
-vim.api.nvim_set_keymap('t', '<leader>tnm', '<cmd>lua _NMAKE_TOGGLE()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>tvs', '<cmd>lua _VSDEVSHELL_TOGGLE()<CR>', opts)
 vim.api.nvim_set_keymap('t', '<leader>tvs', '<cmd>lua _VSDEVSHELL_TOGGLE()<CR>', opts)
 
 -- dap
