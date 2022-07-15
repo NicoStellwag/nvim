@@ -1,6 +1,7 @@
+local telescope = require("telescope")
 local actions = require("telescope.actions")
 local previewers = require("telescope.previewers")
-require('telescope').setup {
+telescope.setup {
 	defaults = {
 		previewer = true,
 		file_previewer = previewers.vim_buffer_cat.new,
@@ -18,3 +19,4 @@ require('telescope').setup {
 		layout_strategy = 'flex'
 	}
 }
+telescope.load_extension('fzf')

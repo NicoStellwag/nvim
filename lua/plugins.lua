@@ -39,8 +39,14 @@ return require('packer').startup(function(use)
 	})
 	use({
 		'nvim-telescope/telescope.nvim',
-		requires = { {'nvim-lua/plenary.nvim'} },
+		requires = {
+			'nvim-lua/plenary.nvim'
+		},
 		config = get_setup("telescope")
+	})
+	use({
+		'nvim-telescope/telescope-fzf-native.nvim',
+		run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
 	})
 	use({
 		'nvim-treesitter/nvim-treesitter',
@@ -71,10 +77,6 @@ return require('packer').startup(function(use)
 	use({
 		'rcarriga/nvim-dap-ui',
 		config = get_setup('dap-ui')
-	})
-	use({
-		'theHamsta/nvim-dap-virtual-text',
-		config = get_setup('dap-virtual-text')
 	})
 
 
