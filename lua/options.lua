@@ -18,13 +18,6 @@ vim.opt.guicursor = "i:block"
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 
--- Use normal clipboard
-vim.cmd([[
-	if !empty(provider#clipboard#Executable())
-		set clipboard+=unnamedplus
-	endif
-]])
-
 -- smartsearch (case sensitive only if contains upper case
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
