@@ -26,12 +26,13 @@ vim.opt.smartcase = true
 vim.opt.scrolloff = 5
 
 -- powershell default on windows
-local is_windows = vim.fn.has('win32') or vim.fn.has('win32unix')
-if is_windows and not vim.fn.has('wsl') then
-	vim.o.shell = 'powershell'
+local is_windows = vim.fn.has('win32') == 1 or vim.fn.has('win32unix') == 1
+local is_wsl = vim.fn.has('wsl') == 1
+if is_windows and not is_wsl then
+	vim.o.shell = 'powershell.exe'
 	vim.o.shellcmdflag = '-c'
 	vim.o.shellquote = '"'
-	vim.o.shellxquote = '.'
+	vim.o.shellxquote = ''
 end
 
 -- always show the sign column
