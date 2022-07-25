@@ -27,8 +27,6 @@ vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<C
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-
--- lspconfig (only on server attach)
 local lspconfig_onattach_mappings = function(client, bufnr)
 	-- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
 	vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -77,5 +75,12 @@ vim.api.nvim_set_keymap('n', '<F12>', '<cmd>lua require"dap".continue()<CR>', op
 vim.api.nvim_set_keymap('n', '<leader>db', '<cmd>lua require"dap".toggle_breakpoint()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>dB', '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>', opts)
 
+-- gitsigns
+local gitsigns_onattach_mappings = function(bufnr)
+	vim.keymap.set('n', '<leader>gd', '<cmd>lua require"gitsigns".diffthis()<CR>')
+	vim.keymap.set('n', '<leader>gb', '<cmd>lua require"gitsigns".toggle_current_line_blame()<CR>')
+end
+
 M.lspconfig_onattach_mappings = lspconfig_onattach_mappings
+M.gitsigns_onattach_mappings = gitsigns_onattach_mappings
 return M

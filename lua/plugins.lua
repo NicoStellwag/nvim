@@ -68,6 +68,10 @@ return require('packer').startup(function(use)
 		'nmac427/guess-indent.nvim',
 		config = get_setup("guess-indent")
 	})
+	use({
+		'lewis6991/gitsigns.nvim',
+		config = get_setup("gitsigns")
+	})
 
 	-- dap plugins
 	use({
