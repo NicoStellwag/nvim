@@ -104,7 +104,7 @@ return require('packer').startup(function(use)
 			requires = {
 				'rafamadriz/friendly-snippets'
 			},
-			setup = get_setup("luasnip")
+			-- setup = get_setup("luasnip")
 	})
 	use({
 		'hrsh7th/nvim-cmp',
