@@ -45,7 +45,7 @@ local lspconfig_onattach_mappings = function(client, bufnr)
 end
 
 -- cmp and luasnip
-vim.api.nvim_set_keymap('i', '<C-l>', '<Plug>luasnip-jump-next', opts)
+vim.api.nvim_set_keymap('i', '<C-l>', '<Plug>(vsnip-jump-next)', opts)
 
 -- lspsaga
 vim.api.nvim_set_keymap('n', 'gf', '<cmd>lua require"lspsaga.provider".lsp_finder()<CR>', opts)

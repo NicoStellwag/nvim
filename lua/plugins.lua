@@ -100,21 +100,22 @@ return require('packer').startup(function(use)
 		config = get_setup("lspsaga")
 	})
 	use({
-			'L3MON4D3/LuaSnip',
-			requires = {
-				'rafamadriz/friendly-snippets'
-			},
-			-- setup = get_setup("luasnip")
-	})
-	use({
 		'hrsh7th/nvim-cmp',
 		requires = {
 			'hrsh7th/cmp-nvim-lsp',
 			'hrsh7th/cmp-buffer',
 			'hrsh7th/cmp-path',
 			'hrsh7th/cmp-cmdline',
-			'saadparwaiz1/cmp_luasnip',
 		},
 		config = get_setup("nvim-cmp")
+	})
+	use({
+		'hrsh7th/cmp-vsnip'
+	})
+	use({
+		'hrsh7th/vim-vsnip'
+	})
+	use({
+		'rafamadriz/friendly-snippets'
 	})
 end)
